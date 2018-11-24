@@ -1,0 +1,43 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+<mat-toolbar>
+  <mat-toolbar-row>
+    <a target="_blank" href="https://material.angular.io/">Angular Material</a>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <a target="_blank" href="https://www.npmjs.com/package/@angular/flex-layout">Flex-Layout</a>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <a target="_blank" href="https://www.letsboot.com/">Letsboot.com</a>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<mat-form-field class="search-form">
+  <input matInput placeholder="Search Picture" type="text">
+</mat-form-field>
+<button button="submit" mat-raised-button color="primary">Search</button>
+<br>
+
+<div class="badge">
+  <div fxHide fxShow.xs="true">xs</div>
+  <div fxHide fxShow.sm="true">sm</div>
+  <div fxHide fxShow.md="true">md</div>
+  <div fxHide fxShow.lg="true">lg</div>
+  <div fxHide fxShow.xl="true">xl</div>
+</div>
+
+<div fxLayout="row" fxLayout.sm="column" fxLayoutWrap fxLayoutGap="1vh" fxLayoutAlign="center">
+  <mat-card class="card-picture" *ngFor="let picture of pictures">
+    <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+      <span fxFlex="80%">{{picture.title}}</span>
+      <mat-icon fxFlex="10%">mode_edit</mat-icon>
+      <mat-icon fxFlex="10%">delete</mat-icon>
+    </mat-card-title>
+    <img mat-card-image [src]="picture.img">
+  </mat-card>
+</div>
